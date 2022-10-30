@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">eMovie</string>
+    <string name="upcoming">Proximos estrenos</string>
+    <string name="top_rated">Tendencia</string>
+    <string name="recommended_for_you">Recomendados para ti</string>
+    <string name="watch_trailer">Ver trailer</string>
+    <string name="movie_plot">MOVIE PLOT</string>
+    <string name="release_year">Año lanzamiento</string>
+    <string name="language">Idioma</string>
+    <string name="vote_average">Mejor Calificación</string>
+    <string name="without_trailer">Esta película no tiene trailer</string>
+</resources>
