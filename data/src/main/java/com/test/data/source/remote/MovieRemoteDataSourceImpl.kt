@@ -9,6 +9,9 @@ import com.test.data.response.trailer.TrailerResponse
 import com.test.data.response.upcoming.UpcomingResponse
 import javax.inject.Inject
 
+/**
+ * Test class [MovieRemoteDataSourceImplTest]
+ */
 class MovieRemoteDataSourceImpl @Inject constructor(private val service: IMovieService) :
     MovieRemoteDataSource {
 
