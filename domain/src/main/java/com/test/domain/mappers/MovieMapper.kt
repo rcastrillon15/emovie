@@ -48,6 +48,16 @@ fun ResultTopRatedResponse.toTopRatedModel() = TopRatedModel(
     vote_average = vote_average
 )
 
+fun TopRatedEntity.toTopRatedModel() = TopRatedModel(
+    id = id,
+    backdrop_path = IMAGE_URL.plus(backdrop_path),
+    original_language = original_language,
+    release_date = release_date,
+    original_title = original_title,
+    overview = overview,
+    vote_average = vote_average
+)
+
 fun UpcomingModel.toMovie() = Movie(
     id = id,
     backdrop_path = IMAGE_URL.plus(backdrop_path),
