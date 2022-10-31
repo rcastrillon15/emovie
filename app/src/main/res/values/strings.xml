@@ -9,4 +9,5 @@
     <string name="language">Idioma</string>
     <string name="vote_average">Mejor Calificación</string>
     <string name="without_trailer">Esta película no tiene trailer</string>
+    <string name="internet_connection_required_message">Esta opción requiere conexión a internet</string>
 </resources>

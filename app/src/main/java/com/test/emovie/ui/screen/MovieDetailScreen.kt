@@ -58,7 +58,7 @@ fun MovieDetailScreen(
                 LinearProgressBarCustom()
             }
             detailState.failed -> {
-                LoadErrorScreen(viewModel.stateErrorMessage)
+                Toast.makeText(context, stringResource(R.string.internet_connection_required_message), Toast.LENGTH_LONG).show()
             }
             else -> {
                 Card(
