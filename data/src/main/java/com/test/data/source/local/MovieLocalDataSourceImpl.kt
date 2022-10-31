@@ -2,14 +2,16 @@ package com.test.data.source.local
 
 import com.test.common.DomainErrorFactory
 import com.test.common.Either
-
 import com.test.data.db.IMovieLocal
 import com.test.data.db.TopRatedEntity
 import com.test.data.db.UpcomingEntity
-import javax.inject.Inject
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
+/**
+ * Test class of [MovieLocalDataSourceImplTest]
+ */
 class MovieLocalDataSourceImpl @Inject constructor(private val local: IMovieLocal) :
     MovieLocalDataSource {
     override suspend fun getUpcoming(): Either<DomainErrorFactory, List<UpcomingEntity>> =
