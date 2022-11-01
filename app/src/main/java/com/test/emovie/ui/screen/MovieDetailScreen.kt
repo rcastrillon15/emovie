@@ -33,7 +33,6 @@ import com.test.common.toDateYYYY
 import com.test.emovie.R
 import com.test.emovie.components.DetailTopAppBar
 import com.test.emovie.components.LinearProgressBarCustom
-import com.test.emovie.components.LoadErrorScreen
 import com.test.emovie.ui.theme.EMovieTheme
 import com.test.emovie.ui.theme.medium
 import com.test.emovie.ui.theme.normal

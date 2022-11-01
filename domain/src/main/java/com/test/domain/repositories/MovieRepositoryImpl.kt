@@ -17,6 +17,9 @@ import com.test.domain.models.TopRatedModel
 import com.test.domain.models.UpcomingModel
 import javax.inject.Inject
 
+/**
+ * Test class of [MovieRepositoryImplTest]
+ */
 class MovieRepositoryImpl @Inject constructor(
     private val remoteDataSource: MovieRemoteDataSourceImpl,
     private val localDataSource: MovieLocalDataSourceImpl
