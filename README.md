@@ -20,7 +20,7 @@ post=> [AnimatedNavHost](https://google.github.io/accompanist/navigation-animati
 
 ### APK Link ✨
 
-* [eMovie](https://drive.google.com/file/d/1sBxnl-v5LX2If_bWthpe0e94WVVpZX_N/view?usp=sharing) - Apk file
+* [eMovie](https://drive.google.com/drive/folders/15dphpyzS8VesMdLhcgiRiAAgBNnuSssA?usp=sharing) - Apk file
 
 ## Beginning 🚀
 
@@ -29,8 +29,6 @@ It is necessary to install Android Studio.
 ## Unit Testing
 
 * Module data, classes => MovieRemoteDataSourceImplTest, MovieLocalDataSourceImplTest
-* Module domain, 
-* Module app, 
 
 Note: It is recommended to run the unit tests of the modula data on a physical device.
 ### Pre-requisites 📋

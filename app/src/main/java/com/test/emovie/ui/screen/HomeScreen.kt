@@ -293,7 +293,7 @@ fun AlertDialogFilter(
                 text = stringResource(title),
                 style = MaterialTheme.typography.body1.copy(
                     fontWeight = FontWeight.Bold,
-                    color = Color.White,
+                    color = Color.Blue,
                     fontSize = 18.sp,
                 )
             )
@@ -325,7 +325,7 @@ fun AlertDialogFilter(
                             text = text,
                             style = MaterialTheme.typography.body1.copy(
                                 fontWeight = FontWeight.SemiBold,
-                                color = Color.White,
+                                color = Color.Blue,
                                 textAlign = TextAlign.Center,
                                 fontSize = 16.sp,
                             ),
