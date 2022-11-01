@@ -29,6 +29,7 @@ It is necessary to install Android Studio.
 ## Unit Testing
 
 * Module data, classes => MovieRemoteDataSourceImplTest, MovieLocalDataSourceImplTest
+* Module domain class => MovieRepositoryImplTest
 
 Note: It is recommended to run the unit tests of the modula data on a physical device.
 ### Pre-requisites 📋
