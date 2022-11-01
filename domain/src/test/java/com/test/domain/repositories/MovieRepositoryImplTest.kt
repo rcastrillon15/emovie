@@ -1,6 +1,7 @@
 package com.test.domain.repositories
 
 import com.test.common.Constants
+import com.test.common.DomainErrorFactory
 import com.test.common.Either
 import com.test.data.source.local.MovieLocalDataSourceImpl
 import com.test.data.source.remote.MovieRemoteDataSourceImpl
@@ -70,6 +71,28 @@ class MovieRepositoryImplTest {
         }
 
     @Test
+    fun `Given getUpcoming left When repository call fails Then verify error state is 401`() =
+        runBlocking {
+            //Given
+            val page = 1
+            val errorFactory = DomainErrorFactory(errorCode = 401)
+            val response = "ErrorLoadData\n" +
+                    "code: 401 (Unauthorized)\n" +
+                    "message: null"
+            //When
+            coEvery { remoteDataSource.getUpcoming(page) } returns Either.Left(errorFactory)
+            val result = repository.getUpcoming(page)
+
+            //Verify
+            Assert.assertTrue(result is Either.Left)
+            Assert.assertEquals(response, (result as Either.Left).l.toString())
+
+            coVerify {
+                remoteDataSource.getUpcoming(page)
+            }
+        }
+
+    @Test
     fun `Given getTopRated right value When data source is executed Verify expected response`() =
         runBlocking {
             //Given
@@ -89,6 +112,28 @@ class MovieRepositoryImplTest {
             Assert.assertTrue(result.r.isNotEmpty())
             Assert.assertTrue(result.r.single().id == 667556)
             coVerify(exactly = 1) {
+                remoteDataSource.getTopRated(page)
+            }
+        }
+
+    @Test
+    fun `Given getTopRated left When repository call fails Then verify error state is 404`() =
+        runBlocking {
+            //Given
+            val page = 1
+            val errorFactory = DomainErrorFactory(errorCode = 404)
+            val response = "ErrorLoadData\n" +
+                    "code: 404 (NotFound)\n" +
+                    "message: null"
+            //When
+            coEvery { remoteDataSource.getTopRated(page) } returns Either.Left(errorFactory)
+            val result = repository.getTopRated(page)
+
+            //Verify
+            Assert.assertTrue(result is Either.Left)
+            Assert.assertEquals(response, (result as Either.Left).l.toString())
+
+            coVerify {
                 remoteDataSource.getTopRated(page)
             }
         }
@@ -115,6 +160,28 @@ class MovieRepositoryImplTest {
         }
 
     @Test
+    fun `Given getDetail left When repository call fails Then verify error state is 500`() =
+        runBlocking {
+            //Given
+            val movieId = 34532
+            val errorFactory = DomainErrorFactory(errorCode = 500)
+            val response = "ErrorLoadData\n" +
+                    "code: 500 (InternalServerError)\n" +
+                    "message: null"
+            //When
+            coEvery { remoteDataSource.getDetail(movieId) } returns Either.Left(errorFactory)
+            val result = repository.getDetail(movieId)
+
+            //Verify
+            Assert.assertTrue(result is Either.Left)
+            Assert.assertEquals(response, (result as Either.Left).l.toString())
+
+            coVerify {
+                remoteDataSource.getDetail(movieId)
+            }
+        }
+
+    @Test
     fun `Given getTrailer right value When data source is executed Verify expected response`() =
         runBlocking {
             //Given
@@ -130,6 +197,28 @@ class MovieRepositoryImplTest {
             Assert.assertTrue(result is Either.Right)
             Assert.assertEquals((result as Either.Right).r?.single(), key)
             coVerify(exactly = 1) {
+                remoteDataSource.getTrailer(movieId)
+            }
+        }
+
+    @Test
+    fun `Given getTrailer left When repository call fails Then verify error state is 400`() =
+        runBlocking {
+            //Given
+            val movieId = 87974
+            val errorFactory = DomainErrorFactory(errorCode = 400)
+            val response = "ErrorLoadData\n" +
+                    "code: 400 (BadRequest)\n" +
+                    "message: null"
+            //When
+            coEvery { remoteDataSource.getTrailer(movieId) } returns Either.Left(errorFactory)
+            val result = repository.getTrailer(movieId)
+
+            //Verify
+            Assert.assertTrue(result is Either.Left)
+            Assert.assertEquals(response, (result as Either.Left).l.toString())
+
+            coVerify {
                 remoteDataSource.getTrailer(movieId)
             }
         }
